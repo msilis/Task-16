@@ -36,22 +36,35 @@ function evaluatePlay(grid){
        for (let j = 0; j<grid[i].length; j++){
     //Horizontal win
            if (grid[i][0] == grid[i][1] && grid [i][0] == grid[i][2]){
+            //Check which character is in index to decide who wins - O wins
             if(grid[i][0] == 'O'){
-                console.log('O wins\nX loses')
-                break
-            }else console.log('X wins\nO loses')
+                return console.log('O wins\nX loses')
+            // X wins
+            } else if(grid[i][0] == 'X'){
+                return console.log('X wins\nO loses')
+            }
     //Vertical win
-       }else if ( grid[0][1] == grid[1][1] && grid[0][1] == grid[2][1])
-        { if(grid[0][1] == 'X') console.log('X wins\nO loses')
-            else console.log('O wins\nX loses')
+            } else if ( grid[0][1] == grid[1][1] && grid[0][1] == grid[2][1])
+            { if(grid[0][1] == 'X') {
+            return console.log('X wins\nO loses')
+            
+            }
+            else if(grid[0][1] == 'O')console.log('O wins\nX loses')
     //Diagonal win
-       }else if(grid[0][2] == grid[1][1] && grid[1][1] == grid[2][0]){
-            if(grid[1][1] == 'O') console.log('0 wins\nX loses')
-                else console.log('X wins\nO loses')
+            } else if(grid[0][2] == grid[1][1] && grid[1][1] == grid[2][0]){
+            if(grid[1][1] == 'O') {
+                return console.log('0 wins\nX loses')
+                
+            }
+                else if(grid[1][1] == 'X')console.log('X wins\nO loses')
     //Inverse Diagonal win
-       }else if(grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]){
-            if (grid[1][1] == 'X') console.log('X wins\nO loses')
-                else onsole.log('O wins\nX loses')
+            } else if(grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]){
+            if (grid[1][1] == 'X') {
+                return console.log('X wins\nO loses')
+            }
+                else if(grid[1][1] == 'O'){
+                    return console.log('O wins\nX loses')
+                }
        }
    }
    } 
